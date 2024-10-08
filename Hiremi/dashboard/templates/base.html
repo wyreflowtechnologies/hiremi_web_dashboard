@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiremi Dashboard</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/utility.css' %}">
+    <link rel="stylesheet" href="{% static '/css/table.css' %}">
+    <link rel="stylesheet" href="{% static '/css/view-user.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Query.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Query-view.css' %}">
+    <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+
+    <link rel="shortcut icon" href="{% static "images/logo.png" %}" type="image/x-icon">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+
+<body>
+    <header id="header">
+        <div class="header-container">
+
+            <div class="dash-company-logo-box">
+                <img src="{% static "images/logo.png" %}" alt="">
+                <span><i class='bx bx-dock-left' id="dock-to-left"></i></span>
+            </div>
+
+            <div class="search-box-container">
+                <div class="searchbar-box">
+                    <span><img src="{% static "images/frame_inspect.png" %}" alt=""></span>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile-content-container">
+
+                <div class="notification-unread-icon">
+                    <img src="{% static "images/notifications_unread.png" %}" alt="">
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="last-login-date-box">
+                    {% if last_login %}
+                        <p>Last Login: {{ last_login }}</p>
+                    {% else %}
+                        <p>Last Login: N/A</p>
+                    {% endif %}
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="profile-content">
+                    <img src="{% static "images/person_4.png" %}" alt="">
+                    <div class="admin-name">
+                        <h4>Super Admin</h4>
+                        <a href="{% url "superuser_logout" %}" style="text-decoration: none; font-size: 14px; color: #C1272D; border-color: #C1272D;">Logout></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <article id="dash-board-body-wrap">
+
+
+        <!-- side nav bar -->
+        <nav id="Side-Navbar">
+            <div class="side-navbar-container">
+
+                <div class="side-nav-flex">
+                    <h1>MAIN</h1>
+                    <ul>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/dashboard/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'dashboard' %}" data-nav-link style="color: {% if request.path == '/admin-dash/dashboard/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-grid-alt'></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/analytics/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/analytics/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bxs-bar-chart-alt-2'></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/app_downloads/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'app_downloads' %}" data-nav-link style="color: {% if request.path == '/admin-dash/app_downloads/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-download'></i>
+                                <span>App Download Status</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/total_user/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'total_user' %}" data-nav-link style="color: {% if request.path == '/admin-dash/total_user/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-spreadsheet'></i>
+                                <span>Total Users</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/verified/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'verified' %}" data-nav-link style="color: {% if request.path == '/admin-dash/verified/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-badge-check'></i>
+                                <span>Verified Users</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/not_verified/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'not_verified' %}" data-nav-link style="color: {% if request.path == '/admin-dash/not_verified/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-error-alt'></i>
+                                <span>Not Verified Users</span>
+                            </a>
+                        </li>
+                        <!-- Add similar links for other routes -->
+                    </ul>
+                    
+                </div>
+
+                <div class="navbar-separator"></div><!-- navbar-separator -->
+
+                <div class="oraganisation side-nav-flex">
+                    <h1>ORGANISATION</h1>
+                    <ul>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/total_companies/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/total_companies/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-list-ul'></i>
+                                <span>Total Companies Listed</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/total_hr/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/total_hr/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-receipt'></i>
+                                <span>Total HR Recruiters</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-separator"></div><!-- navbar-separator -->
+
+
+                <div class="Hiremi-program side-nav-flex">
+                    <h1>HIREMI'S PROGRAMS</h1>
+                    <ul>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/mentorship/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/mentorship/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-support'></i>
+                                <span>Mentorship</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/internship/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'internship'%}" data-nav-link style="color: {% if request.path == '/admin-dash/internship/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bxs-spa'></i>
+                                <span>Internship</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/fresher_job/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'fresher_Job'%}" data-nav-link style="color: {% if request.path == '/admin-dash/fresher_job/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bxs-briefcase-alt-2'></i>
+                                <span>Fresher Job</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/experienced_job/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="{% url 'experienced'%}" data-nav-link style="color: {% if request.path == '/admin-dash/experienced_job/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bxs-graduation'></i>
+                                <span>Experienced Job</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/corporate_training/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/corporate_training/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-bar-chart-alt'></i>
+                                <span>Corporate Training</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/training/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/training/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-wifi'></i>
+                                <span>Training</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navbar-separator"></div><!-- navbar-separator -->
+
+                <div class="admin-setting side-nav-flex">
+                    <h1>MORE & ADMIN SETTING</h1>
+                    <ul>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/project_report/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/project_report/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-file'></i>
+                                <span>Project Report</span>
+                            </a>
+                        </li>
+                        <li style="border-left: 4px solid {% if request.path == '/admin-dash/admin_settings/' %}#C1272D{% else %}transparent{% endif %};">
+                            <a href="#" data-nav-link style="color: {% if request.path == '/admin-dash/admin_settings/' %}#C1272D{% else %}inherit{% endif %};">
+                                <i class='bx bx-cog'></i>
+                                <span>Admin Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+
+
+
+        <!--  DASHBOARD PAGE -->
+        <main>
+            <section id="dashboard-page">
+
+                <div class="dashboard-container"><!-- scroll -->
+
+                    {% block container1 %}
+                    <!-- dashboard -->
+                    {% endblock container1 %}
+
+                    {% block container2 %}
+                    <!-- app download status -->
+                    {% endblock container2 %}
+
+                    {% block container3 %}
+                    <!-- total users -->
+                    {% endblock container3 %}
+
+                    {% block container4 %}
+                    <!-- vereified user -->
+                    {% endblock container4 %}
+
+
+                    {% block container5 %}
+                    <!-- not verified user -->
+                    {% endblock container5 %}
+
+
+                    {% block container6 %}
+                    <!-- Mentorship -->
+                    {% endblock container6 %}
+
+                    {% block container7 %}{% endblock container7 %}
+                    <!-- Internship -->
+
+                    {% block container8 %}{% endblock container8 %}
+                    <!-- fresher job -->
+
+                    {% block container9 %}{% endblock container9 %}
+                    <!-- experienced job -->
+
+
+
+                    <!-- add other section -->
+                    
+                </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        
+    </article>
+
+    <script src="{% static "/js/dashboard.js" %}"></script>
+</body>
+</html>

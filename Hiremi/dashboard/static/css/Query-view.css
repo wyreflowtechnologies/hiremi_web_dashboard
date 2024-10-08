@@ -1,0 +1,126 @@
+/* view query details page */
+
+.view-query-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.view-query-container {
+    width: 96%;
+    margin-top: 25px;
+}
+
+.view-query-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px 25px;
+    margin-top: 10px;
+}
+
+.view-query-heading h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.reject-resolve-btn-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reject-resolve-btn-box #reject {
+    border: 1px solid #C1272D;
+    color: #C1272D;
+    background-color: #c1272c0f;
+    padding: 9px 20px;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reject-resolve-btn-box #resolve {
+    border: 1px solid #C1272D;
+    background-color: #C1272D;
+    color: white;
+    padding: 9px 20px;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.view-query-details {
+    margin-top: 25px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0px 15px 0px;
+}
+
+.view-query-details .view-details {
+    width: 96%;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 5px 0px;
+}
+
+.view-details p {
+    font-size: 0.8rem;
+    color: #808080;
+}
+
+.view-details h3 {
+    font-size: 1.12rem;
+    font-weight: 500;
+    margin: 5px 0px;
+}
+
+.issue-description-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.issue-description-container .issue {
+    width: 96%;
+    margin-top: 20px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.issue-description-container .issue p {
+    font-size: 0.8rem;
+    color: #808080;
+}
+
+.issue-description-container .issue h3 {
+    font-size: 1.12rem;
+    font-weight: 500;
+    margin: 5px 0px;
+}
+
+.issue-description-container .description {
+    width: 96%;
+    margin: 5px 0px 20px 0px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.issue-description-container .description p {
+    font-size: 0.8rem;
+    color: #808080;
+}
+
+.issue-description-container .description h3 {
+    font-size: 1.12rem;
+    font-weight: 500;
+    margin: 5px 0px;
+}

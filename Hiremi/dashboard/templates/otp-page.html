@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+    <link rel="stylesheet" href="{% static "\css\otp-page.css" %}">
+</head>
+
+<body>
+    <section id="otp-page">
+        <div class="otp-page-container">
+
+            <div class="otp-page-img"> <!-- img -->
+
+                <div class="otp-page-img-content">
+                    <div class="company-logo">
+                        <img src="{% static "images/logo.png" %}" alt="">
+                    </div>
+
+                    <div class="info-img-container">
+                        <img src="{% static "images/otp-image-main.png" %}" alt="" id="otp-main-img">
+                        <div class="img-container">
+                            <img src="{% static "images/otp-img-1.png" %}" alt="">
+                            <img src="{% static "images/otp-img-2.png" %}" alt="">
+                            <img src="{% static "images/otp-img-3.png" %}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h1>Super Admin Login </h1>
+                        <p>By logging in, you gain access to the entire Hiremi application, allowing you to view and
+                            make
+                            necessary changes.</p>
+                        <a href="">Learn More ></a>
+                    </div>
+
+
+                    <div class="dot-container">
+                        <div class="dot"></div>
+                        <div class="dot" style="background-color: red;"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="otp-form">
+                <div class="otp-form-container">
+                <form action="{% url "otp_verify" %}" method="post">
+                    {% csrf_token %}
+                    <div class="otp-form-message">
+                        <h1>OTP Sent!</h1>
+                        <p>An OTP sent to your email address {{email}}</p>
+                    </div>
+                    
+                    <div class="otp-input-container">
+                    <div class="enter-otp-text">
+                            <p>Enter OTP</p> <span>123</span>
+                        </div>
+                        <div class="otp-input-box">
+                            <input type="number" name="digit1">
+                            <input type="number" name="digit2" disabled>
+                            <input type="number" name="digit3" disabled>
+                            <input type="number" name="digit4" disabled>
+                            <input type="number" name="digit5" disabled>
+                            <input type="number" name="digit6" disabled>
+                        </div>
+                        <div class="resend-otp-box">
+                            
+                             <p>Didn’t received OTP?</p>
+                            <a href="{% url "resend_otp" %}">Resend otp</a>
+                            
+                        </div>
+                    </div>
+
+                    <button id="verify-btn" type="submit">Verify Now</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static '/js/otp.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,470 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block container1 %}
+
+<div class="dashbord-content" data-page="dashboard">
+    <!-- content container -->
+
+    <div class="main-dashboard">
+
+        <div class="application-hr-dashboard">
+
+            <div class="application-dashboard">
+
+                <div class="application-dashoard-heading">
+                    <h1>Application Dashboard</h1>
+                    <span><i class='bx bx-grid-vertical'></i></span>
+                </div>
+                <span id="heading-separator"></span>
+
+                <div class="application-dashboard-box">
+
+                    <div class="box">
+                        <div class="box-img-container">
+                            <img src="{% static 'images/registration.png' %}" class="dashboard-icon-img"
+                                alt=""><!-- icon image -->
+
+                        </div>
+                        <p id="content-text" style="color:#0870FF;">Total Registration</p>
+                        <p id="content-amount">{{user_count}}</p>
+                        <span id="new-register-txt">
+                            <div>This Month: <p style="font-size:15px">+{{total_registrations}} <span>New Registrations</span></p>
+                            </div>
+                        </span>
+                    </div>
+
+                    <div id="box-separator"></div>
+
+                    <div class="box">
+                        <div class="box-img-container">
+                            <img src="{% static 'images/verified.png' %}" class="dashboard-icon-img"
+                                alt=""><!-- icon image -->
+
+                        </div>
+                        <p id="content-text" style="color:#34AD78;">Verified Users</p>
+                        <p id="content-amount">{{verified_count}}<span>/{{user_count}}</span></p>
+                        <span id="new-register-txt">
+                            
+                        </span>
+                    </div>
+
+                    <div id="box-separator"></div>
+
+                    <div class="box">
+                        <div class="box-img-container">
+                            <img src="{% static 'images/error.png' %}" class="dashboard-icon-img"
+                                alt=""><!-- icon image -->
+                        </div>
+
+                        <p id="content-text" style="color:#DC143C;">Not Verified Users</p>
+                        <p id="content-amount">{{non_verified_count}}<span>/{{user_count}}</span></p>
+                        <span id="new-register-txt">
+                            
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="hr-dashboard">
+                <div class="hr-dashboard-heading">
+                    <h1>HR’s Dashboard</h1>
+                    <span><i class='bx bx-grid-vertical'></i></span>
+                </div>
+                <span id="heading-separator"></span>
+
+                <div class="hr-dashboard-cards">
+
+                    <div class="hr-dashboard-card">
+                        <div class="hr-amount-detail">
+                            <p>3242</p>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+                        <p style="color: #999999;">Total</p>
+                        <div class="hr-card-icon">
+                            <img src="{% static 'images/total-user-icon.png' %}" alt="">
+                            <p>Registered HRs</p>
+                        </div>
+                    </div>
+
+                    <div class="hr-dashboard-card">
+                        <div class="hr-amount-detail">
+                            <p>232</p>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+                        <p style="color: #999999;">Total</p>
+                        <div class="hr-card-icon">
+                            <img src="{% static 'images/verified-icon.png' %}" alt="">
+                            <p>Verified HRs</p>
+                        </div>
+                    </div>
+
+                    <div class="hr-dashboard-card">
+                        <div class="hr-amount-detail">
+                            <p>137</p>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+                        <p style="color: #999999;">Total</p>
+                        <div class="hr-card-icon">
+                            <img src="{% static 'images/not-verified-icon.png' %}" alt="">
+                            <p>Not Verified HRs</p>
+                        </div>
+                    </div>
+
+                    <div class="hr-dashboard-card">
+                        <div class="hr-amount-detail">
+                            <p>12</p>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+                        <p style="color: #999999;">Pending</p>
+                        <div class="hr-card-icon">
+                            <img src="{% static 'images/pending-icon.png' %}" alt="">
+                            <p>Post Approval</p>
+                        </div>
+                        <!--  -->
+                        <div id="pending-notify">
+                            <img src="{% static 'images/warning-icon.png' %}" alt="">
+                            <p>Action Required</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="opportunities-resolved-dashboard">
+            <div class="opportunities-dashboard">
+
+                <div class="opportunities-heading">
+                    <h1>Opportunities</h1>
+                </div>
+
+                <span id="heading-separator"></span>
+
+                <div class="opportunities-cards">
+
+                    <div class="opportunities-card">
+                        <img src="{% static 'images/01_opportunities.png' %}" alt=""
+                            class="dashboard-icon-img">
+                        <div>
+                            <p>Internships</p>
+                            <span>{{intern_count}}</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunities-card">
+                        <img src="{% static 'images/02_opportunities.png' %}" alt=""
+                            class="dashboard-icon-img">
+                        <div>
+                            <p>Fresher Job</p>
+                            <span>{{fresher_count}}</span>
+                        </div>
+                    </div>
+
+                    <div class="opportunities-card">
+                        <img src="{% static 'images/03_opportunities.png' %}" alt=""
+                            class="dashboard-icon-img">
+                        <div>
+                            <p>Experienced Job</p>
+                            <span>{{experience_count}}</span>
+                        </div>
+                    </div>
+
+                    <!-- add cards -->
+                </div>
+
+            </div>
+
+
+
+            <div class="resolved-queries-dashboard">
+                <div class="resolved-query-heading">
+                    <a href="{% url "Query" %}"><h1>Resolved Queries</h1></a>
+                </div>
+                <span id="heading-separator"></span>
+                <div class="resolved-query-data">
+                    <p>{{closed_queries_count}} <span>/{{total_queries_count}}</span></p>
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <div class="user-dashboard">
+        <div class="user-dashboard-heading">
+            <h1>User's Dashboard</h1>
+        </div>
+
+        <span id="heading-separator"></span>
+
+        <div class="user-dashboard-container">
+
+            <div class="gender-container">
+
+                <div class="female-user">
+
+                    <div class="female-count">
+                        <h1>{{total_female_count}}</h1>
+                        <p>Female Users</p>
+                    </div>
+
+                    <div class="verified-non-verified-data">
+                        <div class="verified-user">
+                            <a style="text-decoration:none; color: #34AD78;" href="{% url "verified-female" %}"> <div class="verified-count">
+                                <h1>{{female_verified_count}}</h1>
+                                <p>Verified</p>
+                            </div></a>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+
+                        <div class="not-verified-user">
+                            <a style="text-decoration:none; color: #C1272D; " href="{% url "non-verified-female" %}"><div class="verified-count">
+                                <h1>{{female_non_verified_count}}</h1>
+                                <p>Not Verified</p>
+                            </div></a>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="male-user">
+                    <div class="male-count">
+                        <h1>{{total_male_count}}</h1>
+                        <p>Male Users</p>
+                    </div>
+                    <div class="verified-non-verified-data">
+
+                        <div class="verified-user">
+                            <a style="text-decoration:none; color: #34AD78;" href="{% url "verified-male" %}"> <div class="verified-count">
+                                <h1>{{male_verified_count}}</h1>
+                                <p>Verified</p>
+                            </div></a>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+                        <div class="not-verified-user">
+                            <a style="text-decoration:none; color: #C1272D;" href="{% url "non-verified-male" %}"><div class="verified-count">
+                                <h1>{{male_non_verified_count}}</h1>
+                                <p>Not Verified</p>
+                            </div></a>
+                            <i class='bx bxs-right-arrow'></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="user-other-data-container">
+
+                <div class="user-data1">
+                    <div class="interested-domain">
+                        <a style="text-decoration:none; color: black;" href="{% url "interested-domain" %}">Interested Domain</a>
+                        <i class='bx bxs-right-arrow'></i>
+                    </div>
+                    <div class="branch">
+                        <a style="text-decoration:none; color: black;" href="{% url "branch" %}">Branch</a>
+                        <i class='bx bxs-right-arrow'></i>
+                    </div>
+                </div>
+
+                <div class="user-data2">
+                    <div class="passing-year">
+                        <a style="text-decoration:none; color: black;" href="{% url "passing-year" %}">Passing Year</a>
+                        <i class='bx bxs-right-arrow'></i>
+                    </div>
+                    <div class="college-state">
+                        <a style="text-decoration:none; color: black;" href="{% url "college-state" %}">College State</a>
+                        <i class='bx bxs-right-arrow'></i>
+                    </div>
+                </div>
+
+                <div class="user-data3">
+                    <div class="degree">
+                        <a style="text-decoration:none; color: black;" href="{% url "degree" %}">Degree</a>
+                        <i class='bx bxs-right-arrow'></i>
+                    </div>
+                    <div class="birth-place">
+                        <a style="text-decoration:none; color: black;" href="{% url "birth-place" %}">Birth Place</a>
+                        <i class='bx bxs-right-arrow'></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+<div style="display:none;">
+    <div class="hiremi-Ongoing-dashboard">
+        <h1>Hiremi’s Ongoing Programs Summary</h1>
+        <div class="hiremi-dashboard-box">
+
+            <div class="box">
+                <img src="{% static 'images/01_Internship Active Users.png' %}" alt=""
+                    class="dashboard-icon-img">
+                <p style="color: #FF7402;">Internship: Active Users</p>
+                <span id="content-amount">012 <p class="green-btn">+2.02% ▴</p></span>
+                <p>This Month: +10 Active Users</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/02_Mentorship Active Users.png' %}" alt=""
+                    class="dashboard-icon-img">
+                <p style="color: #2E3DEB;">Mentorship: Active Users</p>
+                <span id="content-amount">012</span>
+                <p>This Month: +02 Active Users</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/03_Experienced Job Active Users.png' %}" alt=""
+                    class="dashboard-icon-img">
+                <p style="color: #CB46BC;">Experienced Job: Active Users</p>
+                <span id="content-amount">012</span>
+                <p>This Month: +02 Active Users</p>
+            </div>
+
+
+
+            <div class="box">
+                <img src="{% static 'images/06_Training Active Users.png' %}" alt=""
+                    class="dashboard-icon-img">
+                <p style="color: #0870FF;">Training: Active Users</p>
+                <span id="content-amount">012</span>
+                <p>This Month: +07 Active Users</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/04_Corporate Training Active Users.png' %}" alt=""
+                    class="dashboard-icon-img">
+                <p style="color: #09C0B5;">Corporate Training: Active Users</p>
+                <span id="content-amount">07</span>
+                <p>This Month: +03 Active Users</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/05_Fresher Job Active Users.png' %}" alt=""
+                    class="dashboard-icon-img">
+                <p style="color: #FC423B;">Fresher Job: Active Users</p>
+                <span id="content-amount">012 <p class="red-btn">-1.02% ▾</p></span>
+                <p>This Month: +05 Active Users</p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="query-summary-dashboard">
+
+        <div class="query-summary">
+            <h1>Queries Summary</h1>
+            <div class="query-summary-dashboard-box">
+
+                <div class="box">
+                    <div class="query-summary-img-container">
+                        <img src="{% static 'images/01_query.png' %}" alt="" class="dashboard-icon-img">
+                        <p>Pending Queries</p>
+                    </div>
+                    <p id="content-amount">05</p>
+                </div>
+
+                <div class="box">
+                    <div class="query-summary-img-container">
+                        <img src="{% static 'images/02_query.png' %}" alt="" class="dashboard-icon-img">
+                        <p style="color: #34AD78;">Resolved Queries</p>
+                    </div>
+                    <p id="content-amount">052</p>
+                </div>
+
+                <!-- add box -->
+            </div>
+        </div>
+
+
+        <div class="last-query-summary">
+            <h1>Last three Queries Summary</h1>
+            <div class="last-query-summary-dashboard">
+
+                <div class="query-box">
+                    <div class="query-profile">
+                        <img src="{% static 'images/last-client-query.png' %}" alt="">
+                        <span>
+                            <h3>john Smith</h3>
+                            <p>johnsmith@gmail.com</p>
+                        </span>
+                    </div>
+                    <div class="query-btns">
+                        <button id="query-btn">View Query</button>
+                        <button id="resolve-btn">Resolve Now</button>
+                    </div>
+                </div>
+
+                <div class="query-box">
+                    <div class="query-profile">
+                        <img src="{% static 'images/last-client-query.png' %}" alt="">
+                        <span>
+                            <h3>john Smith</h3>
+                            <p>johnsmith@gmail.com</p>
+                        </span>
+                    </div>
+                    <div class="query-btns">
+                        <button id="query-btn">View Query</button>
+                        <button id="resolve-btn">Resolve Now</button>
+                    </div>
+                </div>
+
+                <div class="query-box">
+                    <div class="query-profile">
+                        <img src="{% static 'images/last-client-query.png' %}" alt="">
+                        <span>
+                            <h3>john Smith</h3>
+                            <p>johnsmith@gmail.com</p>
+                        </span>
+                    </div>
+                    <div class="query-btns">
+                        <button id="query-btn">View Query</button>
+                        <button id="resolve-btn">Resolve Now</button>
+                    </div>
+                </div>
+
+                <!-- add query box -->
+            </div>
+
+            <div id="query-view-all-btn">
+                <button>View All ></button>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    
+    <div class="active-user-dashboard">
+        <h1>Active Users (Ongoing Programs)</h1>
+        <p>Visual Graph Representation</p>
+        <div class="active-user-graph-img">
+            <img src="{% static 'images/acitve-user-graph.png' %}" alt="graph">
+        </div>
+    </div>
+    
+</div>   
+    <!-- add dashboard container -->
+    <div class="goto-top-btn">
+        <a href="#dashboard-page" onclick="scrollTotop()">
+            <img src="{% static 'images/goto-top-btn.png' %}" alt="">
+            <p>Go to Top</p>
+        </a>
+    </div>
+    
+</div>
+{% endblock container1 %}

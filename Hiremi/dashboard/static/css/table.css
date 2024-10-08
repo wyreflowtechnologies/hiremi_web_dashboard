@@ -1,0 +1,87 @@
+/* dashboard -> tables */
+.interested-domain-table-content {
+    width: 95%;
+    margin-top: 20px;
+}
+
+
+.interested-domain-table-content #current-page {
+    font-size: 0.7rem;
+    color: #808080;
+}
+
+.interested-domain-table-content-heading {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.interested-domain-table-content-heading h1 {
+    padding: 20px 20px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.domain-table-list-container {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.domain-table-list {
+    width: 96%;
+}
+
+.domain-table-list .download-status-list-heading {
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.domain-table-list .download-status-list-heading p:nth-child(2) {
+    width: 25%;
+}
+
+.domain-table-list-container .states-list-item ul li {
+    width: 16%;
+    font-size: 0.9rem;
+    /* border-right: 1px solid #eaeaea; */
+
+}
+
+#Interested-domain {
+    width: 25%;
+}
+
+.domain-table-list-container p {
+    font-size: 1rem;
+}
+
+.domain-table-list-container .states-list-item ul li:nth-child(4) {
+    color: #34AD78;
+}
+
+.domain-table-list-container .states-list-item ul li:nth-child(5) {
+    color: #C1272D;
+}
+
+
+
+/* verfied not-verified table css */
+
+.verified-table-content {
+    width: 95%;
+    margin-top: 25px;
+}
+
+.verified-table-content #current-page {
+    font-size: 0.7rem;
+    color: #808080;
+}
+
+.verified-table-content .heading p {
+    padding-top: 30px;
+}

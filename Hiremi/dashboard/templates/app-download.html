@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block container2 %}
+
+<div class="app-download-status-content" data-page="app download status" >
+
+    <div class="download-status-container">
+        <div class="download-status-heading">
+            <h1>State Rankings: Downloads, Verified and Not Verified Users</h1>
+            <button id="download-app-btn">
+                <img src="{% static 'images/download-app-btn.png' %}" alt="">
+                <p>Download App</p>
+            </button>
+        </div>
+
+        <span>
+            <p>Table Representation</p>
+        </span>
+
+        <div class="download-status-buttons">
+
+            <div class="sorting-btns">
+                <a style="text-decoration:none;" href="?sort_by=alphabetical&search={{ search_query }}"><button>Default</button></a>
+                <a style="text-decoration:none;" href="?sort_by=verified&search={{ search_query }}"><button><img src="{% static 'images/verified.png' %}" alt="verified-img"> Verified Users</button></a>
+                <a style="text-decoration:none;" href="?sort_by=non_verified&search={{ search_query }}"><button><img src="{% static 'images/error.png' %}" alt="non-verified-img"> Not Verified Users</button></a>
+                <a style="text-decoration:none;" href="?sort_by=registered&search={{ search_query }}"><button><img src="{% static 'images/app-download-moble-img.png' %}" alt=""> App Downloads</button></a>
+            </div>
+
+        </div>
+
+        <div class="download-status-list-container">
+            <div class="download-status-list-heading">
+                <p>S.No</p>
+                <p>States Names</p>
+                <p>App downloads</p>
+                <p style="color: #34AD78;">Verified Users</p>
+                <p style="color: #C1272D;">Not Verified Users</p>
+            </div>
+            <div class="download-status-list">
+        {% for state, counts in user_counts.birth_place_data.items %}
+        <div class="states-list-item">
+            <ul>
+                <li>{{ forloop.counter }}</li>
+                <li>{{ state }}</li>
+                <li>{{ counts.registered }}</li>
+                <li>{{ counts.verified }}</li>
+                <li>{{ counts.non_verified }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+        </div>
+    </div>
+
+    <div class="goto-top-btn">
+        <a href="#dashboard-page" onclick="scrollTotop()">
+            <img src="{% static 'images/goto-top-btn.png' %}" alt="">
+            <p>Go to Top</p>
+        </a>
+    </div>
+
+</div>
+{% endblock container2 %}

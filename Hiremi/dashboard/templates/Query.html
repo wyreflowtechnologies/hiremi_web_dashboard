@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container3 %}
+<div class="queries-list-content">
+    <div class="queries-list-container">
+        <p id="current-page">Dashboard > Queries</p>
+
+        <div class="query-list-heading">
+            <h1>Queries</h1>
+        </div>
+
+        <!-- query btn -->
+        <div class="query-btn-container">
+
+            <div class="query-btn active" query-btn="Total Queries">
+                <h1>{{query_count}}</h1>
+                <span></span><!-- line -->
+                <p>Total Queries</p>
+            </div>
+
+            <div class="query-btn" query-btn="Pending Queries">
+                <h1>{{open_query_count}}</h1>
+                <span></span><!-- line -->
+                <p>Open Queries <i class='bx bx-right-arrow-alt'></i></p>
+            </div>
+
+            <div class="query-btn" query-btn="Rejected Queries">
+                <h1>{{closed_query_count}}</h1>
+                <span></span><!-- line -->
+                <p>Closed Queries <i class='bx bx-right-arrow-alt'></i></p>
+            </div>
+
+            <div class="query-btn" query-btn="Resolved Queries">
+                <h1>0</h1>
+                <span></span><!-- line -->
+                <p>Resolved Queries <i class='bx bx-right-arrow-alt'></i></p>
+            </div>
+
+        </div>
+
+
+        <!-- four table -->
+        <div class="query-list-table-content" query-table="Total Queries">
+            <div class="query-list-table">
+                <div class="query-list-table-data">
+                    <div class="query-table-box">
+
+                        <div class="query-heading">
+                            <p>S.No</p>
+                            <p>Name</p>
+                            <p>Email Adress</p>
+                            <p>Issue</p>
+                            <p>Description</p>
+                            <p>Creation Date</p>
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                        {% for i in data %}
+                        <div class="query-item">
+                            <p>{{forloop.counter}}</p>
+                            <p>{{i.name}}</p>
+                            <p>{{i.email}}</p>
+                            <p>{{i.issue}}</p>
+                            <p id="discript">{{i.description}}
+                            </p>
+                            <p>{{i.created_at}}</p>
+                            <p><span id="select-user">{{i.status}}</span></p>
+                            <p id="query-view-user"><a href="{% url 'Query_view' pk=i.id %}"><i class='bx bx-show'></i>View</a>
+                            </p>
+                        </div>
+                        {% endfor %}
+
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="query-list-table-content" query-table="Pending Queries" style="display: none;">
+            <div class="query-list-table">
+                <div class="query-list-table-data">
+                    <div class="query-table-box">
+
+                        <div class="query-heading">
+                            <p>S.No</p>
+                            <p>Name</p>
+                            <p>Email Adress</p>
+                            <p>Issue</p>
+                            <p>Description</p>
+                            <p>Creation Date</p>
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+
+                        {% for i in data %}
+                        <div class="query-item">
+                            <p>{{forloop.counter}}</p>
+                            <p>{{i.name}}</p>
+                            <p>{{i.email}}</p>
+                            <p>{{i.issue}}</p>
+                            <p id="discript">{{i.description}}
+                            </p>
+                            <p>{{i.created_at}}</p>
+                            <p><span id="select-user">{{i.status}}</span></p>
+                            <p id="query-view-user"><a href="#"><i class='bx bx-show'></i>View</a>
+                            </p>
+                        </div>
+                        {% endfor %}
+
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="query-list-table-content" query-table="Rejected Queries" style="display: none;">
+            <div class="query-list-table">
+                <div class="query-list-table-data">
+                    <div class="query-table-box">
+
+                        <div class="query-heading">
+                            <p>S.No</p>
+                            <p>Name</p>
+                            <p>Email Adress</p>
+                            <p>Issue</p>
+                            <p>Description</p>
+                            <p>Creation Date</p>
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+
+                        {% for i in data %}
+                        <div class="query-item">
+                            <p>{{forloop.counter}}</p>
+                            <p>{{i.name}}</p>
+                            <p>{{i.email}}</p>
+                            <p>{{i.issue}}</p>
+                            <p id="discript">{{i.description}}
+                            </p>
+                            <p>{{i.created_at}}</p>
+                            <p><span id="select-user">{{i.status}}</span></p>
+                            <p id="query-view-user"><a href="#"><i class='bx bx-show'></i>View</a>
+                            </p>
+                        </div>
+                        {% endfor %}
+
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="query-list-table-content" query-table="Resolved Queries" style="display: none;">
+            <div class="query-list-table">
+                <div class="query-list-table-data">
+                    <div class="query-table-box">
+
+                        <div class="query-heading">
+                            <p>S.No</p>
+                            <p>Name</p>
+                            <p>Email Adress</p>
+                            <p>Issue</p>
+                            <p>Description</p>
+                            <p>Creation Date</p>
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+
+                        <div class="query-item">
+                            <p>1</p>
+                            <p>Mukesh Dwivedi</p>
+                            <p>mukesh@wyreflow.com</p>
+                            <p>payment issue</p>
+                            <p id="discript">Lorem ipsum dolor sit, amet consectetur adipisicing
+                            </p>
+                            <p>29/08/2024</p>
+                            <p><span id="select-user">selected</span></p>
+                            <p id="query-view-user"><a href="#"><i class='bx bx-show'></i>View</a>
+                            </p>
+                        </div>
+
+                        <div class="query-item">
+                            <p>2</p>
+                            <p>Nikhil Mishra</p>
+                            <p>nikhil@wyreflow.com</p>
+                            <p>payment issue</p>
+                            <p id="discript">Lorem ipsum dolor sit, amet consectetur adipisicing
+                            </p>
+                            <p>29/08/2024</p>
+                            <p><span id="pending-btn">pending</span></p>
+                            <p id="query-view-user"><a href="#"><i class='bx bx-show'></i>View</a>
+                            </p>
+                        </div>
+
+                        <div class="query-item">
+                            <p>3</p>
+                            <p>Akash dubey</p>
+                            <p>Akash@wyreflow.com</p>
+                            <p>payment issue</p>
+                            <p id="discript">Lorem ipsum dolor sit, amet consectetur adipisicing
+                            </p>
+                            <p>29/08/2024</p>
+                            <p><span id="rejected-btn">Rejected</span></p>
+                            <p id="query-view-user"><a href="#"><i class='bx bx-show'></i>View</a>
+                            </p>
+                        </div>
+
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- load more content btn -->
+        <div class="load-more-content-btn">
+            <a href="#">Load More 50+</a>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

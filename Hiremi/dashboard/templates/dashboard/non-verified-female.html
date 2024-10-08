@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block container4 %}
+
+<div class="verified-table-content">
+
+    <p id="current-page">Dashboard > Not Verified Female Users</p>
+
+    <div class="interested-domain-table-content-heading">
+        <h1>Not Verified Female Users</h1>
+    </div>
+
+    <div class="mentorship-table-data" id="mentorship-applied" table-id="Mentorship Applied">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <a style="text-decoration:none;" href="?sort_by=default">
+                    <button style="cursor:pointer;" id="Default">
+                        <img src="{% static 'images/swap_vert.png' %}" alt="">Default
+                    </button>
+                </a>
+                <a style="text-decoration:none;" href="?sort_by=name">
+                    <button style="cursor:pointer;" id="Sort">
+                        <img src="{% static 'images/swap_vert.png' %}" alt="">Sort by Name
+                    </button>
+                </a>
+            </div>
+
+            <div class="mentorship-table">
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Degree</p>
+                        <p>Birth State</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                    
+                    {% for i in female_non_verified_users %}
+                    <div class="table-user-list-item">
+                        <p>{{ forloop.counter }}</p>
+                        <p>{{ i.full_name }}</p>
+                        <p>{{ i.email }}</p>
+                        <p>{{ i.phone_number }}</p>
+                        <p>{{ i.gender }}</p>
+                        <p>{{ i.degree_name }}</p>
+                        <p>{{ i.birth_place }}</p>
+                        <p>{{ i.college_state }}</p>
+                        <p>{{ i.passing_year }}</p>
+                        <div class="status-action-btn">
+                            <button id="select-user">{{ i.verified }}</button>
+                            <a href="{% url "view_user" pk=i.id %}"><button id="view-user"><i class="fa-regular fa-eye"></i>View</button></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="goto-top-btn">
+        <a href="#dashboard-page" onclick="scrollTotop()">
+            <img src="{% static "images/goto-top-btn.png" %}" alt="">
+            <p>Go to Top</p>
+        </a>
+    </div>
+</div>
+
+{% endblock container4 %}

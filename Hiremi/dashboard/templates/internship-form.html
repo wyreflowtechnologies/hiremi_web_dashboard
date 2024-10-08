@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container7 %}
+  <!-- internship job form -->
+  <div class="internship-form-content" id="internship-form">
+    <form action="{% url 'create_internship_job' %}" method="POST">
+      {% csrf_token %}
+      <div class="internship-form-container">
+        <div class="internship-form-heading">
+          <h1>Internships</h1>
+        </div>
+
+        <div class="internship-details-container">
+          <!-- internship detail -->
+          <div class="internship-datails-box">
+            <h3>Internship details</h3>
+            <div class="internship-details">
+              <div class="company-name">
+                <p>Company Name</p>
+                <input type="text" placeholder="Company Name" name="company-name" />
+              </div>
+
+              <div class="internship-about-company">
+                <p>About Company</p>
+                <input type="text" placeholder="About Company" name="about_company" />
+              </div>
+
+              <label for="">
+                <p>Internship profile</p>
+                <input type="text" placeholder="e.g. Android App Development" class="intern-profile" name="intern-profile" />
+              </label>
+
+              <div class="job-description">
+                <p>Job Description</p>
+                <input type="text" placeholder="e.g.job description" name="job_description" />
+              </div>
+
+              <div class="education-required">
+                <p>Education</p>
+                <input type="text" placeholder="e.g. graduate,postgraduate" name="education_required" />
+              </div>
+
+              <div class="intership-type">
+                <p>Internship type</p>
+                <div>
+                  <label for="intern-type1"><input type="radio" id="intern-type1" name="internship-type" value="inOffice" />In Office</label>
+                  <label for="intern-type2"><input type="radio" id="intern-type2" name="internship-type" value="hybrid" />Hybrid</label>
+                  <label for="intern-type3"><input type="radio" id="intern-type3" name="internship-type" value="remote" />Remote</label>
+                </div>
+              </div>
+
+              <div class="location-detail">
+                <p>Location</p>
+                <input type="text" placeholder="Add Location" name="location" />
+              </div>
+
+              <!--  -->
+            </div>
+          </div>
+
+          <div class="duration-benifit-detail-box">
+            <h3>Duration & Benifits</h3>
+            <div class="duration-benifit-detail">
+              <div class="duration-box">
+                <p>Duration</p>
+                <input type="number" placeholder="e.g.1 or 2 Year" name="duration" />
+              </div>
+              <div class="benifit-detail">
+                <p>Benifits</p>
+                <input type="text" placeholder="benifit details" name="benefits" />
+              </div>
+            </div>
+          </div>
+
+          <!-- stipend & Perks -->
+          <div class="stipend-detail-box">
+            <h3>Stipend & perks</h3>
+            <div class="stipend-details">
+              <div class="stipend-type">
+                <p>Stipend</p>
+                <div>
+                  <label for="stipend-opt1"><input type="radio" id="stipend-opt1" name="stipend-type" value="Fixed" />Fixed</label>
+                  <label for="stipend-opt2"><input type="radio" id="stipend-opt2" name="stipend-type" value="Negotiable" />Negotiable</label>
+                  <label for="stipend-opt3"><input type="radio" id="stipend-opt3" name="stipend-type" value="Unpaid" />Unpaid</label>
+                </div>
+              </div>
+
+              <div class="amount-details">
+                <p>Amount Details</p>
+                <div class="amount-input-box">
+                  <input type="text" placeholder=" ₹" disabled name="amount" />
+                  <input type="text" placeholder="e.g. 10000" name="amount" />
+                  <input type="text" placeholder="/month" disabled name="amount" />
+                </div>
+              </div>
+
+              <div class="perks-select">
+                <p>Perk Selection</p>
+
+                <div class="perk-check-box">
+                  <label for="perk1"><input type="checkbox" id="perk1" value="Certificate" name="perks" />Certificate</label>
+
+                  <label for="perk2"><input type="checkbox" id="perk2" value="Letter of Recommendation" name="perks" />Letter of Recommendation</label>
+
+                  <label for="perk3"><input type="checkbox" id="perk3" value="Weekly Hours" name="perks" />Weekly Hours</label>
+
+                  <label for="perk4"><input type="checkbox" id="perk4" value="Flexible Timings" name="perks" />Flexible Timings</label>
+
+                  <label for="perk5"><input type="checkbox" id="perk5" value="WFH" name="perks" />WFH</label>
+                </div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+
+          <!-- additional detail -->
+          <div class="additional-details">
+            <h3>Additional Details</h3>
+            <div class="additional-detail-box">
+              <div class="inters-response">
+                <p>Intern’s responsibilities</p>
+                <input type="text" placeholder="Describe Here" name="responsibilities" />
+              </div>
+
+              <div class="mobile-number">
+                <p>Alternate mobile number for this listing</p>
+                <label for="">
+                  <input type="text" placeholder="+91" disabled name="alt_mobile" />
+                  <input type="text" placeholder="Mobile Number" name="alt_mobile" />
+                </label>
+              </div>
+
+              <div class="skills-required">
+                <p>Skills Required (Optional)</p>
+                <input type="text" placeholder="e.g. Java" name="skills_required" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-form-btn">
+          <button type="submit">Post Internship</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}

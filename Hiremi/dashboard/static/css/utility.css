@@ -1,0 +1,771 @@
+/* services box css */
+.dashboard-icon-img {
+    width: 20%;
+}
+
+.green-btn {
+    color: #34AD78;
+    font-size: 0.53rem;
+    border: 1px solid #34AD78;
+    border-radius: 20px;
+    background-color: #34ad7910;
+    padding: 2.3px 5px;
+    margin-bottom: 4px;
+}
+
+.green-btn img {
+    width: 7.2px;
+}
+
+.red-btn {
+    color: #C1272D;
+    font-size: 0.53rem;
+    border: 1px solid #C1272D;
+    border-radius: 20px;
+    background-color: #c1272c1a;
+    padding: 2px 5px;
+}
+
+.red-btn img {
+    width: 10.42px;
+}
+
+
+#content-text {
+    color: #0870FF;
+    font-size: 0.8rem;
+    margin: 10px 0px;
+}
+
+
+#content-amount {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+#content-amount span {
+    font-size: 1rem;
+    color: #B0BBC6;
+}
+
+#new-register-txt {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* #new-register-txt p:nth-child(1) {
+    font-size: 0.8rem;
+    color: #B0BBC6;
+}
+
+#new-register-txt p:nth-child(2) {
+    font-size: 1rem;
+    color: #34AD78;
+}
+
+#new-register-txt p:nth-child(3) {
+    font-size: 0.7rem;
+    color: #34AD78;
+} */
+
+
+
+
+/* dashboard -> opportunities */
+.opportunities-cards .opportunities-card:nth-child(1) {
+    border: 1px solid #FC3E41;
+    background: linear-gradient(#fc3e4127, #ff6f0125);
+}
+
+.opportunities-cards .opportunities-card:nth-child(2) {
+    border: 1px solid #FF6E01;
+    background: linear-gradient(#ff6f0118, #febe0d1c);
+}
+
+.opportunities-cards .opportunities-card:nth-child(3) {
+    border: 1px solid #CB44BD;
+    background: linear-gradient(#cb44bd1c, #db6aa116);
+}
+
+
+/* dashboard -> hiremi ongoing dashbord css */
+.hiremi-dashboard-box .box:nth-child(1):hover {
+    outline: 1px solid #FF7402;
+}
+
+.hiremi-dashboard-box .box:nth-child(2):hover {
+    outline: 1px solid #2E3DEB;
+}
+
+.hiremi-dashboard-box .box:nth-child(3):hover {
+    outline: 1px solid #CB46BC;
+}
+
+.hiremi-dashboard-box .box:nth-child(4):hover {
+    outline: 1px solid #0870FF;
+}
+
+.hiremi-dashboard-box .box:nth-child(5):hover {
+    outline: 1px solid #09C0B5;
+}
+
+.hiremi-dashboard-box .box:nth-child(6):hover {
+    outline: 1px solid #FC423B;
+}
+
+/* ====== */
+.hiremi-dashboard-box .box:nth-child(1) {
+    background-color: #ff740212;
+}
+
+.hiremi-dashboard-box .box:nth-child(2) {
+    background-color: #2e3eeb11;
+}
+
+.hiremi-dashboard-box .box:nth-child(3) {
+    background-color: #cb46bb09;
+}
+
+.hiremi-dashboard-box .box:nth-child(4) {
+    background-color: #086fff10;
+}
+
+.hiremi-dashboard-box .box:nth-child(5) {
+    background-color: #09c0b410;
+}
+
+.hiremi-dashboard-box .box:nth-child(6) {
+    background-color: #fc413b13;
+}
+
+
+/* dashboard -> query-summary section */
+
+.query-summary .box:nth-child(1) {
+    background-color: #EB8D2E;
+    color: white;
+}
+
+.query-summary .box:nth-child(2) {
+    background-color: white;
+    border: 1px solid #34AD78;
+}
+
+
+/* app download status section section */
+#verified-user-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: #34AD78;
+    color: white;
+
+}
+
+#verified-user-btn img {
+    width: 30px;
+}
+
+#non-verified-user-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background-color: #d52e34;
+    color: white;
+}
+
+#non-verified-user-btn img {
+    width: 30px;
+}
+
+#app-download-status-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid black;
+    padding: 5px 25px;
+}
+
+#app-download-status-btn img {
+    width: 16px;
+}
+
+#sort-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid black;
+    padding: 5px 25px;
+}
+
+#sort-btn img {
+    width: 18px;
+}
+
+
+/* total user - list item btn */
+#select-user {
+    border: 1px solid #34AD78;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 30px;
+    background-color: #34ad7917;
+    color: #34AD78;
+    cursor: pointer;
+}
+
+
+#pending-btn {
+    /* utitlity btn */
+    border: 1px solid #FF7402;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 30px;
+    background-color: #ff740214;
+    color: #FF7402;
+    cursor: pointer;
+}
+
+#rejected-btn {
+    /* utitlity btn */
+    border: 1px solid red;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 30px;
+    background-color: #c1272c10;
+    color: red;
+    cursor: pointer;
+}
+
+#view-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid #C1272D;
+    background-color: #c1272c;
+    font-size: 0.9rem;
+    padding: 4px 20px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ==================================== */
+
+
+
+#view-user i {
+    font-size: 13px;
+}
+
+#Search-btn {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 7px 17px;
+    background-color: #C1272D;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#Search-btn i {
+    font-size: 25px;
+}
+
+
+
+/* mentorship css */
+
+.color {
+    color: #2E3DEB;
+    color: #098CE3;
+    color: #34AD78;
+    color: #DC143C;
+    color: #09C0B5;
+    color: #CB46BC;
+}
+
+.mentorship-summary-box .box p:nth-child(3) {
+    font-size: 0.75rem;
+}
+
+
+
+
+.mentorship-summary-box .box:nth-child(1) span p {
+    font-size: 0.8rem;
+    color: #2E3DEB;
+}
+
+.mentorship-summary-box .box:nth-child(1) span {
+    color: #2E3DEB;
+}
+
+.mentorship-summary-box .box:nth-child(1) {
+    background-color: #2e3eeb1c;
+}
+
+.mentorship-summary-box .box:nth-child(1):hover {
+    outline: 1px solid #2E3DEB;
+}
+
+
+
+
+.mentorship-summary-box .box:nth-child(2) span p {
+    font-size: 0.8rem;
+    color: #098CE3;
+}
+
+.mentorship-summary-box .box:nth-child(2) span {
+    color: #098CE3;
+}
+
+.mentorship-summary-box .box:nth-child(2) {
+    background-color: #098ce317;
+}
+
+.mentorship-summary-box .box:nth-child(2):hover {
+    outline: 1px solid #098CE3;
+}
+
+
+
+
+.mentorship-summary-box .box:nth-child(3) span p {
+    font-size: 0.8rem;
+    color: #34AD78;
+}
+
+.mentorship-summary-box .box:nth-child(3) span {
+    color: #34AD78;
+}
+
+.mentorship-summary-box .box:nth-child(3) {
+    background-color: #34ad791b;
+}
+
+.mentorship-summary-box .box:nth-child(3):hover {
+    outline: 1px solid #34AD78;
+}
+
+
+
+
+.mentorship-summary-box .box:nth-child(4) span p {
+    font-size: 0.8rem;
+    color: #DC143C;
+}
+
+.mentorship-summary-box .box:nth-child(4) span {
+    color: #DC143C;
+}
+
+.mentorship-summary-box .box:nth-child(4) {
+    background-color: #dc143c1b;
+}
+
+.mentorship-summary-box .box:nth-child(4):hover {
+    outline: 1px solid #DC143C;
+}
+
+
+
+/* mentorship -> mentorship status */
+
+.mentorship-status-box .box p:nth-child(3) {
+    font-size: 0.75rem;
+}
+
+.mentorship-status-box .box:nth-child(1) span p {
+    font-size: 0.8rem;
+    color: #09C0B5;
+}
+
+.mentorship-status-box .box:nth-child(1) span {
+    color: #09C0B5;
+}
+
+.mentorship-status-box .box:nth-child(1) {
+    background-color: #09c0b41b;
+}
+
+.mentorship-status-box .box:nth-child(1):hover {
+    outline: 1px solid #09C0B5;
+}
+
+
+
+.mentorship-status-box .box:nth-child(2) span p {
+    font-size: 0.8rem;
+    color: #CB46BC;
+}
+
+.mentorship-status-box .box:nth-child(2) span {
+    color: #CB46BC;
+}
+
+.mentorship-status-box .box:nth-child(2) {
+    background-color: #cb46bb1d;
+}
+
+.mentorship-status-box .box:nth-child(2):hover {
+    outline: 1px solid #CB46BC;
+}
+
+
+/* internship css */
+
+#increasing-btn {
+    font-size: 0.8rem;
+    border: 1px solid #34AD78;
+    border-radius: 30px;
+    color: #34AD78;
+    padding: 1px 4px;
+}
+
+/* internship --> internship summary */
+.internship-summary-box .box div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.internship-summary-box .box p:nth-child(3) {
+    margin: 5px 0px;
+    font-size: 0.8rem;
+    color: #B0BBC6;
+}
+
+.internship-summary-box .box p:nth-child(3) span {
+    color: #34AD78;
+}
+
+.internship-summary-box .box:nth-child(1) {
+    background-color: #ff740217;
+}
+
+.internship-summary-box .box:nth-child(1) span p {
+    font-size: 0.8rem;
+    color: #FF7402;
+}
+
+.internship-summary-box .box:nth-child(1):hover {
+    outline: 1px solid #FF7402;
+}
+
+
+.internship-summary-box .box:nth-child(2) {
+    background-color: #098ce31d;
+}
+
+.internship-summary-box .box:nth-child(2) span p {
+    font-size: 0.8rem;
+    color: #098CE3;
+}
+
+.internship-summary-box .box:nth-child(2):hover {
+    outline: 1px solid #098CE3;
+}
+
+
+.internship-summary-box .box:nth-child(3) {
+    background-color: #34ad7917;
+}
+
+.internship-summary-box .box:nth-child(3) span p {
+    font-size: 0.8rem;
+    color: #34AD78;
+}
+
+.internship-summary-box .box:nth-child(3):hover {
+    outline: 1px solid #34AD78;
+}
+
+
+.internship-summary-box .box:nth-child(4) {
+    background-color: #dc143c19;
+}
+
+.internship-summary-box .box:nth-child(4) span p {
+    font-size: 0.8rem;
+    color: #DC143C;
+}
+
+.internship-summary-box .box:nth-child(4):hover {
+    outline: 1px solid #DC143C;
+}
+
+
+
+/* internship -> internship status */
+.internship-status-box .box p:nth-child(3) {
+    margin: 5px 0px;
+    font-size: 0.8rem;
+    color: #B0BBC6;
+}
+
+.internship-status-box .box p:nth-child(3) span {
+    color: #34AD78;
+}
+
+
+.internship-status-box .box:nth-child(1) {
+    background-color: #09c0b41a;
+}
+
+.internship-status-box .box:nth-child(1):hover {
+    outline: 1px solid #09c0b4;
+
+}
+
+.internship-status-box .box:nth-child(2) {
+    background-color: #cb46bb1c;
+}
+
+.internship-status-box .box:nth-child(2):hover {
+    outline: 1px solid #cb46bb;
+}
+
+
+.internship-status-box .box:nth-child(1) span p {
+    font-size: 0.8rem;
+    color: #09C0B5;
+}
+
+.internship-status-box .box:nth-child(2) span p {
+    font-size: 0.8rem;
+    color: #CB46BC;
+}
+
+
+/* fresher job -> css */
+.fresher-job-summary-box .box div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fresher-job-summary-box .box div:nth-child(2) p {
+    color: red;
+    border: 1px solid #C1272D;
+    background-color: #c1272c10;
+    font-size: 0.7rem;
+    border-radius: 30px;
+    padding: 1px 5px;
+}
+
+.fresher-job-summary-box .box p:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.fresher-job-summary-box .box p:nth-child(3) {
+    font-size: 0.8rem;
+    color: #B0BBC6;
+    margin: 5px 0px;
+}
+
+
+
+.fresher-job-summary-box .box p:nth-child(3) span {
+    color: #34AD78;
+}
+
+.abs {
+    color: #FC423B;
+    color: #098CE3;
+    color: #34AD78;
+    color: #DC143C;
+}
+
+.fresher-job-summary-box .box:nth-child(1) {
+    background-color: #fc413b15;
+}
+
+.fresher-job-summary-box .box:nth-child(1):hover {
+    outline: 1px solid #FC423B;
+}
+
+.fresher-job-summary-box .box:nth-child(2) {
+    background-color: #098ce314;
+}
+
+.fresher-job-summary-box .box:nth-child(2):hover {
+    outline: 1px solid #098CE3;
+}
+
+.fresher-job-summary-box .box:nth-child(3) {
+    background-color: #34ad7917;
+}
+
+.fresher-job-summary-box .box:nth-child(3):hover {
+    outline: 1px solid #34AD78;
+}
+
+.fresher-job-summary-box .box:nth-child(4) {
+    background-color: #dc143c15;
+}
+
+.fresher-job-summary-box .box:nth-child(4):hover {
+    outline: 1px solid #DC143C;
+}
+
+
+
+/* fresher -> fresher job status */
+.fresher-job-status-box .box div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fresher-job-status-box .box div:nth-child(2) p {
+    color: green;
+    border: 1px solid #34AD78;
+    background-color: #34ad7916;
+    font-size: 0.7rem;
+    border-radius: 30px;
+    padding: 1px 5px;
+}
+
+.fresher-job-status-box .box p:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.fresher-job-status-box .box p:nth-child(3) span {
+    color: #34AD78;
+}
+
+.fresher-job-status-box .box p:nth-child(3) {
+    font-size: 0.8rem;
+    color: #B0BBC6;
+    margin: 5px 0px;
+}
+
+.fresher-job-status-box .box:nth-child(1) {
+    background-color: #09c0b413;
+}
+
+.fresher-job-status-box .box:nth-child(1):hover {
+    outline: 1px solid #09C0B5;
+}
+
+.fresher-job-status-box .box:nth-child(2) {
+    background-color: #cb46bb17;
+}
+
+.fresher-job-status-box .box:nth-child(2):hover {
+    outline: 1px solid #cb46bb;
+}
+
+
+/* Experieced job css */
+/* for all boxes */
+.experienced-job-summary-box .box p:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.experienced-job-summary-box .box p:nth-child(3) {
+    font-size: 0.85rem;
+    color: #B0BBC6;
+    margin: 5px 0px;
+}
+
+.experienced-job-summary-box .box p:nth-child(3) span {
+    color: #34AD78;
+}
+
+/* ===================== */
+
+.experienced-job-summary-box .box:nth-child(1) {
+    background-color: #cb46bb12;
+}
+
+.experienced-job-summary-box .box:nth-child(1):hover {
+    outline: 1px solid #cb46bb;
+}
+
+.experienced-job-summary-box .box:nth-child(2) {
+    background-color: #098ce316;
+}
+
+.experienced-job-summary-box .box:nth-child(2):hover {
+    outline: 1px solid #098CE3;
+}
+
+.experienced-job-summary-box .box:nth-child(3) {
+    background-color: #34ad7916;
+}
+
+.experienced-job-summary-box .box:nth-child(3):hover {
+    outline: 1px solid #34AD78;
+}
+
+.experienced-job-summary-box .box:nth-child(4) {
+    background-color: #dc143c12;
+}
+
+.experienced-job-summary-box .box:nth-child(4):hover {
+    outline: 1px solid #DC143C;
+}
+
+/* experiences job -> experienced job status */
+/* for all boxes */
+
+.experienced-job-status-box .box div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.experienced-job-status-box .box div:nth-child(2) p {
+    color: green;
+    border: 1px solid #34AD78;
+    background-color: #34ad7916;
+    font-size: 0.7rem;
+    border-radius: 30px;
+    padding: 1px 5px;
+}
+
+.experienced-job-status-box .box:nth-child(1) p:nth-child(2) {
+    font-size: 0.75rem;
+}
+
+.experienced-job-status-box .box p:nth-child(2) {
+    font-size: 0.8rem;
+}
+
+.experienced-job-status-box .box p:nth-child(3) {
+    font-size: 0.85rem;
+    color: #B0BBC6;
+    margin: 5px 0px;
+}
+
+.experienced-job-status-box .box p:nth-child(3) span {
+    color: #34AD78;
+}
+
+/* ================== */
+.experienced-job-status-box .box:nth-child(1) {
+    background-color: #09c0b415;
+}
+
+.experienced-job-status-box .box:nth-child(1):hover {
+    outline: 1px solid #09C0B5;
+}
+
+.experienced-job-status-box .box:nth-child(2) {
+    background-color: #cb46bb13;
+}
+
+.experienced-job-status-box .box:nth-child(2):hover {
+    outline: 1px solid #CB46BC;
+}
+

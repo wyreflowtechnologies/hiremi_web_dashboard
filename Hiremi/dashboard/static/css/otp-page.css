@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+}
+
+.otp-page-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #ECF1F4;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.otp-page-img {
+    padding: 40px 40px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.otp-page-img-content {
+    width: 95%;
+    height: 100%;
+    background-image: url("images/mobile.png");
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ECF1F4;
+}
+
+.company-logo {
+    padding-top: 20px;
+}
+
+.company-logo img {
+    width: 130px;
+}
+
+#otp-main-img {
+    width: 55%;
+}
+
+.img-container img {
+    width: 123px;
+}
+
+.info-img-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 0px 10px 0px;
+}
+
+.content {
+    border-top: 2px solid #DDDDDD;
+    width: 85%;
+    height: 30%;
+    display: flex;
+    background-color: #ECF1F4;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.content h1 {
+    font-size: 2.33rem;
+    color: #41485E;
+    letter-spacing: 1px;
+}
+
+.content p {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.content a {
+    color: #098CE3;
+    font-weight: 600;
+}
+
+.dot-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+
+}
+
+.dot-container div {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    margin: 2px 2px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot-container div.active {
+    background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+    .otp-page-img {
+        /* width: 100%; */
+        height: 100%;
+        border-right: none;
+        border-bottom: 2px solid red;
+    }
+
+    .otp-page-img-content {
+        padding: 10px;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content p {
+        font-size: 2rem;
+    }
+
+    .img-container img {
+        width: 50%;
+        max-width: 80px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content h1 {
+        font-size: 1.2rem;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+        width: 60%;
+    }
+
+    .dot-container div {
+        width: 8px;
+        height: 8px;
+    }
+
+    .company-logo img {
+        width: 100px;
+    }
+
+    .img-container img {
+        width: 30%;
+        max-width: 60px;
+    }
+}
+
+
+/* otp section css */
+.otp-form {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.otp-form-container {
+    width: 60%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.otp-form-message h1 {
+    margin: 00px 0px 10px 0px;
+    font-size: 2.5rem;
+    color: #34AD78;
+}
+
+.otp-form-message p {
+    font-size: 0.97rem;
+    font-weight: 600;
+}
+
+
+
+.otp-input-container {
+    margin: 40px 0px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+
+.enter-otp-text {
+    width: 375px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin: 0px 0px 10px 0px;
+    color: #575E6A;
+}
+
+.enter-otp-text span {
+    outline: 2px solid #575E6A;
+    font-size: 0.6rem;
+    border-radius: 1px;
+}
+
+
+.otp-input-box {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 16px;
+    margin: 0px 0px 10px 0px;
+}
+
+.otp-input-box input {
+    width: 50px;
+    height: 50px;
+    padding-left: 17px;
+    font-size: 1.8rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #34AD78;
+    cursor: pointer;
+    background-color: #F5F5F5;
+}
+
+.otp-input-box input::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+    display: none;
+}
+
+.resend-otp-box {
+    width: 70%;
+    display: flex;
+}
+
+.resend-otp-box p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.resend-otp-box a {
+    font-size: 0.9rem;
+    color: #098CE3;
+    font-weight: 600;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+#verify-btn {
+    font-size: 1rem;
+    padding: 14px 15px;
+    font-weight: 600;
+    background-color: #c1272cbd;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    pointer-events: none;
+    transition: background 0.2s ease-in;
+}
+
+#verify-btn.active {
+    background-color: #c1272c;
+    pointer-events: all;
+}
+
+#verify-btn:hover {
+    outline: 2px solid #C1272D;
+    background-color: transparent;
+    color: #C1272D;
+}
+
+
+@media screen and (max-width: 980px) {
+    .otp-page-img {
+        display: none;
+    }
+
+    .otp-form {
+        width: 100%;
+    }
+}

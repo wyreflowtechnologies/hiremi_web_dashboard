@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container8 %}
+<!-- fresher job form -->
+<div class="internship-form-content"  id="fresher-job">
+    <form>
+        <div class="internship-form-container">
+            <div class="internship-form-heading">
+                <h1>Fresher Job</h1>
+            </div>
+
+            <div class="internship-details-container">
+
+                <!-- internship detail -->
+                <div class="internship-datails-box">
+                    <h3>Job details</h3>
+                    <div class="fresher-job-details">
+
+                        <label for="">
+                            <p>Job profile</p>
+                            <input type="text" placeholder="e.g. Android App Development"
+                                class="fresher-profile">
+                        </label>
+
+
+                        <div class="fresher-type">
+                            <p>Job type</p>
+                            <div>
+                                <label for="fresher-type1">
+                                    <input type="radio" id="fresher-type1" name="internship-type"
+                                        value="inOffice">In
+                                    Office
+                                </label>
+
+                                <label for="fresher-type2">
+                                    <input type="radio" id="fresher-type2" name="internship-type"
+                                        value="hybrid">Hybrid
+                                </label>
+
+                                <label for="fresher-type3">
+                                    <input type="radio" id="fresher-type3" name="internship-type"
+                                        value="remote">Remote
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="location-detail">
+                            <p>Location</p>
+                            <input type="text" placeholder="Add Location">
+                        </div>
+
+                        <div class="required-experience">
+                            <p>Required experience</p>
+                            <div>
+                                <input type="text" placeholder="Minimum Year(s)">
+                                <p>to</p>
+                                <input type="text" placeholder="Maximum Year(s)">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <!--  -->
+                    </div>
+                </div>
+
+                <!-- stipend & Perks -->
+                <div class="stipend-detail-box">
+                    <h3>Salary & perks</h3>
+                    <div class="stipend-details">
+
+                        <div class="ctc-details">
+                            <p>CTC</p>
+                            <div class="ctc-input-box">
+                                <input type="text" placeholder=" ₹" disabled>
+                                <input type="text" placeholder="Enter Amount (Min)">
+                                <p>to</p>
+                                <input type="text" placeholder="Enter Amount (Max)">
+                            </div>
+                        </div>
+
+                        <div class="fresher-perks-select">
+                            <p>Perk Selection</p>
+
+                            <div class="perk-check-box">
+
+                                <label for="fresher-perk1">
+                                    <input type="checkbox" id="fresher-perk1" value="Life Insurance"
+                                        name="perks">Life Insurance
+                                </label>
+
+                                <label for="fresher-perk2">
+                                    <input type="checkbox" id="fresher-perk2"
+                                        value="Health Insurance" name="perks">Health Insurance
+
+                                </label>
+
+                                <label for="fresher-perk3">
+                                    <input type="checkbox" id="fresher-perk3" value="WFH"
+                                        name="perks">WFH
+                                </label>
+
+                                <label for="fresher-perk4">
+                                    <input type="checkbox" id="fresher-perk4" value="Weekly Hours"
+                                        name="perks">Weekly Hours
+                                </label>
+
+                                <label for="fresher-perk5">
+                                    <input type="checkbox" id="fresher-perk5" value="5 days a week"
+                                        name="perks">5 days a week
+                                </label>
+
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+
+                </div>
+
+
+                <!-- additional detail -->
+                <div class="additional-details">
+                    <h3>Additional Details</h3>
+                    <div class="additional-detail-box">
+
+                        <div class="mobile-number">
+                            <p>Alternate mobile number for this listing
+                            </p>
+                            <label for="">
+                                <input type="text" placeholder="+91" disabled>
+                                <input type="text" placeholder="Mobile Number">
+                            </label>
+                        </div>
+
+                        <div class="skills-required">
+                            <p>Skills Required (Optional)</p>
+                            <input type="text" placeholder="e.g. Java">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-form-btn">
+                <button>Post Fresher Internship</button>
+            </div>
+
+
+        </div>
+
+    </form>
+</div>
+{% endblock container8 %}

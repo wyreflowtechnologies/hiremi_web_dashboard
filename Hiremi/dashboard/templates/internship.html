@@ -1,0 +1,518 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container7 %}
+<div class="internship-content" data-page="internship">
+    <div class="internship-content-container">
+        <span>
+            <img src="{% static 'images/grade.png' %}" alt="">
+            <h1>Continue creating more internship opportunities.</h1>
+        </span>
+       <a href="{% url "internship_from" %}"><button id="Create-btn">Create Internship</button></a>
+    </div>
+
+    <div class="internship-summary-container">
+        <h1>Internship Summary</h1>
+
+        <div class="internship-summary-box">
+
+            <div class="box" box-link="Internship Applied">
+                <div class="box-img-container">
+                    <span>
+                        <img src="{% static 'images/01_Internship Active Users.png' %}" alt=""
+                            class="dashboard-icon-img">
+                        <p>Internship Applied</p>
+                    </span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+                <div style="font-size: 2.4rem;">{{intern_count}} <span id="increasing-btn">+2.02% ▴</span>
+                </div>
+
+                <p>This Month: <span>+05 Internship Applied</span></p>
+
+            </div>
+
+            <div class="box" box-link="internship Under Review Candidates">
+                <div class="box-img-container">
+                    <span>
+                        <img src="{% static "images/02_under-review.png" %}" alt=""
+                            class="dashboard-icon-img">
+                        <p>Under Review Candidates</p>
+                    </span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+                <div id="content-amount">02</div>
+
+                <p>This Month: <span>+02 Candidates</span></p>
+            </div>
+
+            <div class="box" box-link="internship Selected Candidates">
+                <div class="box-img-container">
+                    <span>
+                        <img src="{% static "images/03_selected.png" %}" alt="" class="dashboard-icon-img">
+                        <p>Selected Candidates</p>
+                    </span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+                <div id="content-amount">{{selected_count}}</div>
+
+                <p>This Month: <span>+08 Candidates</span></p>
+            </div>
+
+            <div class="box" box-link="internship Rejected Candidates">
+                <div class="box-img-container">
+                    <span>
+                        <img src="{% static "images/04_rejected.png" %}" alt="" class="dashboard-icon-img">
+                        <p>Rejected Candidates</p>
+                    </span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+                <div id="content-amount">{{rejected_count}}</div>
+
+                <p>This Month: <span>+01 Candidates</span></p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- four table -->
+    <div class="mentorship-table-data" id="Internship-Applied" style="display:none ;"
+        table-id="Internship Applied">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <h1>Internship Applied</h1>
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <button id="Sort"><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+                <button id="State"><img src="{% static "images/filter_list.png" %}" alt="">Filter</button>
+            </div>
+
+            <div class="mentorship-table"> <!-- scroll -->
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>UTR No.</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Year</p>
+                        <p>Profile</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                    {% for i in combined_data %}
+                    <div class="table-user-list-item">
+                        <p>{{ forloop.counter }}</p>
+                        <p>{{i.uid}}</p>
+                        <p>{{i.full_name }}</p>
+                        <p>{{i.email }}</p>
+                        <p>{{i.phone_number }}</p>
+                        <p>{{ i.current_year }}</p>
+                        <p>{{i.internship}}</p>
+                        <p>{{i.college_state }}</p>
+                        <p>{{i.passing_year }}</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">{{i.candidate_status}}</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- add user list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mentorship-table-data" id="Internship-Under-Review Candidates"
+        style="display:none ;" table-id="internship Under Review Candidates">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <h1>Under Review Candidates</h1>
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <button id="Sort"><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+                <button id="State"><img src="{% static "images/filter_list.png" %}" alt="">Filter</button>
+            </div>
+
+            <div class="mentorship-table"> <!-- scroll -->
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>UTR No.</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Profile</p>
+                        <p>Birth State</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+
+                    <div class="table-user-list-item">
+                        <p>2</p>
+                        <p>davdvsd*********</p>
+                        <p>Mukesh Dwivedi</p>
+                        <p>mukesh@google.com</p>
+                        <p>5867264927</p>
+                        <p>Male</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>Bhopal</p>
+                        <p>2025</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">Pending</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+                    <div class="table-user-list-item">
+                        <p>1</p>
+                        <p>davdvsd*********</p>
+                        <p>Mukesh Dwivedi</p>
+                        <p>mukesh@google.com</p>
+                        <p>5867264927</p>
+                        <p>Male</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>Bhopal</p>
+                        <p>2025</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">Pending</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+
+                    <!-- add user list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mentorship-table-data" id="Internship-Selected-Candidates" style="display:none ;"
+        table-id="internship Selected Candidates">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <h1>Selected Candidates</h1>
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <button id="Sort"><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+                <button id="State"><img src="{% static "images/filter_list.png" %}" alt="">Filter</button>
+            </div>
+
+            <div class="mentorship-table"> <!-- scroll -->
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>UTR No.</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Profile</p>
+                        <p>Birth State</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+                    {% for i in selected_data %}
+                    <div class="table-user-list-item">
+                        <p>{{ forloop.counter }}</p>
+                        <p>davdvsd*********</p>
+                        <p>{{i.full_name }}</p>
+                        <p>{{i.email }}</p>
+                        <p>{{i.phone_number }}</p>
+                        <p>{{ i.gender }}</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>{{i.college_state }}</p>
+                        <p>{{i.passing_year }}</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">{{i.candidate_status}}</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+                    {% endfor%}
+                    <!-- add user list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mentorship-table-data" id="Internship-Rejected-Candidates" style="display:none ;"
+        table-id="internship Rejected Candidates">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <h1>Rejected Candidates</h1>
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <button id="Sort"><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+                <button id="State"><img src="{% static "images/filter_list.png" %}" alt="">Filter</button>
+            </div>
+
+            <div class="mentorship-table"> <!-- scroll -->
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>UTR No.</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Profile</p>
+                        <p>Birth State</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+
+                    {% for i in rejected_data %}
+                    <div class="table-user-list-item">
+                        <p>{{ forloop.counter }}</p>
+                        <p>davdvsd*********</p>
+                        <p>{{i.full_name }}</p>
+                        <p>{{i.email }}</p>
+                        <p>{{i.phone_number }}</p>
+                        <p>{{ i.gender }}</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>{{i.college_state }}</p>
+                        <p>{{i.passing_year }}</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">{{i.candidate_status}}</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+                    {% endfor%}
+
+                    <!-- add user list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="internship-status-container" style="display:none;">
+        <h1>Internship Status</h1>
+
+        <div class="internship-status-box">
+
+            <div class="box" box-link="internship Ongoing Internships">
+                <div class="box-img-container">
+                    <span>
+                        <img src="{% static 'images/05_ongoing.png' %}" alt="" class="dashboard-icon-img">
+                        <p>Open/Ongoing Internships</p>
+                    </span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+                <div style="font-size: 2.4rem;">012 <span id="increasing-btn">+2.02% ▴</span>
+                </div>
+
+                <p>This Month: <span>+05 Internship Applied</span></p>
+
+            </div>
+
+            <div class="box" box-link="internship Number of Roles">
+                <div class="box-img-container">
+                    <span>
+                        <img src="{% static 'images/06_roles.png' %}" alt="" class="dashboard-icon-img">
+                        <p>Number of Roles</p>
+                    </span>
+                    <i class='bx bx-right-arrow-alt'></i>
+                </div>
+                <div id="content-amount">02</div>
+
+                <p>This Month: <span>+02 Candidates</span></p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- two table -->
+    <div class="mentorship-table-data" id="Internship-Open-Ongoing-Internships"
+        style="display:none ;" table-id="internship Ongoing Internships">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <h1>Open/Ongoing Internships</h1>
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <button id="Sort"><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+                <button id="State"><img src="{% static "images/filter_list.png" %}" alt="">Filter</button>
+            </div>
+
+            <div class="mentorship-table"> <!-- scroll -->
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>UTR No.</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Profile</p>
+                        <p>Birth State</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+
+                    <div class="table-user-list-item">
+                        <p>1</p>
+                        <p>davdvsd*********</p>
+                        <p>Mukesh Dwivedi</p>
+                        <p>mukesh@google.com</p>
+                        <p>5867264927</p>
+                        <p>Male</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>Bhopal</p>
+                        <p>2025</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">Pending</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+                    <div class="table-user-list-item">
+                        <p>2</p>
+                        <p>davdvsd*********</p>
+                        <p>Mukesh Dwivedi</p>
+                        <p>mukesh@google.com</p>
+                        <p>5867264927</p>
+                        <p>Male</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>Bhopal</p>
+                        <p>2025</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">Pending</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+
+                    <!-- add user list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mentorship-table-data" id="Internship-Number-of-Roles" style="display:none ;"
+        table-id="internship Number of Roles">
+        <div class="mentorship-table-data-container">
+
+            <div class="heading">
+                <h1>Number of Roles</h1>
+                <p>Table Representation</p>
+            </div>
+
+            <div class="sorting-btns">
+                <button id="Sort"><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+                <button id="State"><img src="{% static "images/filter_list.png" %}" alt="">Filter</button>
+            </div>
+
+            <div class="mentorship-table"> <!-- scroll -->
+
+                <div class="mentorship-table-list">
+                    <div class="table-heading">
+                        <p>S.No</p>
+                        <p>UTR No.</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Profile</p>
+                        <p>Birth State</p>
+                        <p>College State</p>
+                        <p>Passing Year</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+
+                    <div class="table-user-list-item">
+                        <p>1</p>
+                        <p>davdvsd*********</p>
+                        <p>Mukesh Dwivedi</p>
+                        <p>mukesh@google.com</p>
+                        <p>5867264927</p>
+                        <p>Male</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>Bhopal</p>
+                        <p>2025</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">Pending</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+                    <div class="table-user-list-item">
+                        <p>2</p>
+                        <p>davdvsd*********</p>
+                        <p>Mukesh Dwivedi</p>
+                        <p>mukesh@google.com</p>
+                        <p>5867264927</p>
+                        <p>Male</p>
+                        <p>Web-Developer</p>
+                        <p>Rewa</p>
+                        <p>Bhopal</p>
+                        <p>2025</p>
+                        <div class="status-action-btn">
+                            <button id="pending-btn">Pending</button>
+                            <button id="view-user"><i class="fa-regular fa-eye"></i>View</button>
+                        </div>
+                    </div>
+
+                    <!-- add user list -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="goto-top-btn">
+        <a href="#dashboard-page" onclick="scrollTotop()">
+            <img src="{% static 'images/goto-top-btn.png' %}" alt="">
+            <p>Go to Top</p>
+        </a>
+    </div>
+
+</div>
+
+{% endblock container7 %}

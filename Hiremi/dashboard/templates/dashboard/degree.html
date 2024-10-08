@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block container4 %}
+<div class="interested-domain-table-content">
+    <p id="current-page">Dashboard > Degree</p>
+    <div class="interested-domain-table-content-heading">
+        <h1>Degree</h1>
+    </div>
+
+    <div class="domain-table-list-container">
+        <div class="domain-table-list">
+            <div class="download-status-list-heading">
+                <p>Serial No.</p>
+                <p>
+                    <a href="?sort_by=degree" class="sorting-btns" style=" color: black; text-decoration:none;">Degree</a>
+                </p>
+                <p>
+                    <a href="?sort_by=total" class="sorting-btns" style=" color: black; text-decoration:none;">Applicants</a>
+                </p>
+                <p style="color: #34AD78;">
+                    <a href="?sort_by=verified" class="sorting-btns" style="color: #34AD78;text-decoration:none;">Verified User</a>
+                </p>
+                <p>
+                    <a href="?sort_by=non_verified" class="sorting-btns" style="color: #C1272D; text-decoration:none;">Not Verified Users</a>
+                </p>
+            </div>
+    
+            <div class="download-status-list">
+                {% for degree, data in degree_summary.items %}
+                <div class="states-list-item">
+                    <ul>
+                        <li id="s.no">{{ forloop.counter }}</li>
+                        <li id="Interested-domain">{{ degree }}</li>
+                        <li id="app-download">{{ data.total }}</li>
+                        <li id="verified-user">{{ data.verified }}</li>
+                        <li id="not-verified-user">{{ data.non_verified }}</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="goto-top-btn">
+        <a href="#dashboard-page" onclick="scrollTotop()">
+            <img src="{% static "images/goto-top-btn.png" %}" alt="">
+            <p>Go to Top</p>
+        </a>
+    </div>
+
+</div>
+{% endblock container4 %}

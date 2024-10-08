@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "\css\index.css" %}">
+    <style>
+        .alert-boxxx {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 25px;
+        }
+      </style>
+</head>
+
+<body>
+    {% if error %}
+            <div class="alert-boxxx">
+                {{ error }}
+            </div>
+        {% endif %}
+    <section id="Landing-page">
+        <div class="Landing-page-container">
+            <div class="landing-page-wrap-img-container">
+
+                <div class="Landing-page-img-container">
+                    <img src="{% static "images/landing-page-desktop.png" %}" alt="">
+                </div>
+
+                <div class="down-circle-image-container">
+                    <img src="{% static "images/image-1.png" %}" alt="">
+                    <img src="{% static "images/image-2.png" %}" alt="">
+                    <img src="{% static "images/image-3.png" %}" alt="">
+                    <img src="{% static "images/image-6.png" %}" alt="">
+                    <img src="{% static "images/image-5.png" %}" alt="">
+                    <img src="{% static "images/image-4.png" %}" alt="">
+                </div>
+
+            </div>
+
+            
+            <div id="sign-in-page">
+                <div class="sign-in-page-content">
+
+                    <div class="logo">
+                        <img src="{% static "images/hiremi-logo.png" %}" alt="Logo">
+                        <p>Super Admin Login</p>
+                    </div>
+                            
+                    <div class="form-container">
+                        <h1>Sign In!</h1>
+                        <form action="{% url "superuser_login" %}" method="post">
+                            {% csrf_token %}
+                            <div class="input-container">
+                                <p>Email Address</p>
+                                <div class="input">
+                                    <input type="email" id="user-email" placeholder="johndoe@gmail.com" name="email">
+                                    <img src="{% static "images/mail.png" %}" alt="">
+                                </div>
+                            </div>
+
+                            <div class="input-container">
+                                <p>Password</p>
+                                <div class="input">
+                                    <input type="password" id="user-password" placeholder="⁕⁕⁕⁕⁕⁕⁕⁕" name="password">
+                                    <img src="{% static "images/eye_tracking.png" %}" alt="" id="eye-icon">
+                                </div>
+                            </div>
+
+                            {% comment %} <a href="" id="forget-pass">Forget Password?</a> {% endcomment %}
+
+                            <button id="sign-in-btn" type="submit">Sign-In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static "/js/index.js" %}"></script>
+</body>
+
+</html>

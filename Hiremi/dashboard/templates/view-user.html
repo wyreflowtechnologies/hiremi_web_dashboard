@@ -1,0 +1,343 @@
+<!-- view user page -->
+{% extends 'base.html' %}
+{% load static %}
+{% block container3 %}
+  <!-- view user page -->
+  <div class="view-profile-content">
+    <div class="view-profile-content-wrap-container">
+      <!-- first info -->
+      <div class="view-profile-content-container">
+        <div class="profile-name-data">
+          <div class="profile-data-heading">
+            <h1>User Profile</h1>
+          </div>
+
+          <div class="verfication-date-container">
+            <p id="acc-create">Account Creation Date: {{ register.time_end }}</p> <p>-||-</p>
+            {% if verification_details %}
+              <p id="acc-verify">Verification Date: {{ verification_details.time_end }}</p>
+            {% endif %}
+          </div>
+
+          <div class="user-first-info">
+            <div class="user-profile-img-container">
+              <div class="user-img">
+                <img src="{% static '/images/face.svg' %}" alt="" />
+              </div>
+              <div class="name-box">
+                <p id="name">
+                 Name: <span>{{ register.full_name }}</span>
+                </p>
+                {% if verification_details %}
+                  <p id="utr-no">
+                    UID No: <span>{{ verification_details.uid }}</span>
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="edit-downlaod-btns">
+              <button style="cursor:pointer;" id="edit-profile">
+                {% if register.verified %}
+                  <span>Verified</span>
+                {% else %}
+                  <span>Not Verified</span>
+                {% endif %}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="personal-info-data">
+          <div class="personal-info-container">
+            <div class="personal-info-wrap">
+              <div class="personal-info">
+                <div class="personal-info-heading">
+                  <h1>Personal Information</h1>
+                </div>
+
+                <div class="info-data">
+                  <p>Father's Full Name</p>
+                  <h3>{{ register.father_name }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>Gender*</p>
+                  <h3>{{ register.gender }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>Date of Birth*</p>
+                  <h3>{{ register.date_of_birth }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>Birth State*</p>
+                  <h3>{{ register.birth_place }}</h3>
+                </div>
+                {% if personal_details %}
+                  <div class="info-data">
+                    <p>Birth Place*</p>
+                    <h3>{{ personal_details.home_town }}</h3>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="personal-info">
+                <div class="personal-info-heading">
+                  <h1>College Information</h1>
+                </div>
+
+                <div class="info-data">
+                  <p>College Name</p>
+                  <h3>{{ register.college_name }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>Degree*</p>
+                  <h3>{{ register.degree_name }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>Branch*</p>
+                  <h3>{{ register.branch_name }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>College State</p>
+                  <h3>{{ register.college_state }}</h3>
+                </div>
+                <div class="info-data">
+                  <p>Passing Year</p>
+                  <h3>{{ register.passing_year }}</h3>
+                </div>
+              </div>
+            </div>
+
+            {% if verification_details %}
+              <div class="verify-info-container">
+                <div class="verify-info-heading">
+                  <h1>Verification Information</h1>
+                </div>
+                <div class="verified-info">
+                  <p>Enrollment Number / Roll Number / College ID / UAN Number*</p>
+                  <h3>{{ verification_details.college_id_number }}</h3>
+                </div>
+                <div class="verified-info">
+                  <p>Unique Identification Number/UID*</p>
+                  <h3>{{ verification_details.uid }}</h3>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="extra-info">
+            <div class="extra-profile-info">
+              <div class="personal-info-heading">
+                <h1>Contact Information</h1>
+              </div>
+
+              <div class="info-data">
+                <p>Email Address</p>
+                <h3>{{ register.email }}</h3>
+              </div>
+
+              <div class="info-data">
+                <p>Phone Number</p>
+                <h3>{{ register.phone_number }}</h3>
+              </div>
+
+              <div class="info-data whatsapp-no">
+                <p>WhatsApp Number</p>
+                <a href="">
+                  <img src="{% static 'images/WhatsApp.svg' %}" alt="" />
+                  <span>{{ register.whatsapp_number }}</span>
+                </a>
+              </div>
+            </div>
+
+            {% if resumelink %}
+              <div class="extra-info-container">
+                <div class="extra-info-heading">
+                  <h1>Extra Information</h1>
+                </div>
+
+                {% if resumelink %}
+                  <div class="extra-info-data">
+                    <p>Resume Link: {{ resumelink.url }}</p>
+                    <div>
+                      Resume: <a href="{{ resumelink.url }}" id="view-resume">View Resume</a>
+                    </div>
+                  </div>
+                {% endif %}
+
+                {% if basic_details %}
+                  <div class="extra-info-data">
+                    <p>Looking For</p>
+                    <h3>{{ basic_details.looking_for }}</h3>
+                  </div>
+                {% endif %}
+
+                {% if key_skills %}
+                  <div class="extra-info-data">
+                    <p>Key Skills</p>
+                    <span>
+                      {% for skill in key_skills %}
+                        <p>{{ skill }}</p>
+                      {% endfor %}
+                    </span>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- educational & project info -->
+      <div class="educational-project-info">
+        <div class="educational-project-container">
+          <div class="educational-heading">
+            <h1>Educational Information</h1>
+          </div>
+          <div class="educational-info">
+            <p>{{ register.degree_name }}, {{ register.branch_name }} | {{ register.college_state }}</p>
+            {% if education %}
+              <h3>{{ register.passing_year }} | CGPA: {{ education.marks }}</h3>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if projects %}
+          <div class="educational-project-container">
+            <div class="educational-heading">
+              <h1>Project Information</h1>
+            </div>
+
+            <div class="project-info">
+              <p>Start Date: {{ projects.start_date }} - End Date: {{ projects.end_date }}</p>
+              <h3>{{ projects.project_title }}</h3>
+              <p>
+                Project Link :
+                <a href="{{ projects.link }}">
+                  <img src="{% static 'images/attach_file.svg' %}" alt="" />
+                  <span>{{ projects.link }}</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- more personal info -->
+
+      {% if personal_details %}
+        <div class="more-personal-info-container">
+          <div class="more-personal-info-heading">
+            <h1>More Personal Information</h1>
+          </div>
+
+          <div class="more-personal-info-content">
+            <div class="marital-info">
+              <div class="more-personal-info">
+                <p>Marital Status</p>
+                <h3>{{ personal_details.marital_status }}</h3>
+              </div>
+
+              <div class="more-personal-info">
+                <p>Current Address</p>
+                <h3>{{ personal_details.local_address }}</h3>
+              </div>
+
+              <div class="more-personal-info">
+                <p>Permanent Address</p>
+                <h3>{{ personal_details.permanent_address }}</h3>
+              </div>
+            </div>
+
+            <div class="other-info">
+              <div class="more-personal-info">
+                <p>Differently Abled</p>
+                <h3>{{ personal_details.ability }}</h3>
+              </div>
+
+              <div class="more-personal-info">
+                <p>Category</p>
+                <h3>{{ personal_details.category }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- experience info -->
+
+      <div class="experience-content">
+        {% if experience %}
+          <div class="experience-container">
+            <div class="experience-heading">
+              <h1>Experience</h1>
+            </div>
+
+            <div class="experience-info">
+              <p>{{ experience.work_environment }} | - {{ experience.start_date }} - {{ experience.end_date }}</p>
+              <h2>{{ experience.job_title }}</h2>
+              <h3>{{ experience.company_name }}</h3>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if languages or links %}
+          <div class="social-language-container">
+            <div class="social-links-content">
+              <div class="social-links-heading">
+                <h1>Social Links</h1>
+              </div>
+
+              <div class="social-links">
+                {% if links.linkedin_url %}
+                  <a href="{{ links.linkedin_url }}">
+                    <img src="{% static 'images/LinkedIn.svg' %}" alt="" />
+                    <p>LinkedIn</p>
+                  </a>
+                {% endif %}
+                {% if links.github_url %}
+                  <a href="{{ links.github_url }}">
+                    <img src="{% static 'images/github.svg' %}" alt="" />
+                    <p>GitHub</p>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="language-content">
+              <div class="language-heading">
+                <h1>Language</h1>
+              </div>
+              <div class="language-container">
+                {% for language in languages %}
+                  <p>{{ language }}</p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- profile summary -->
+
+      {% if profile_summary %}
+        <div class="profile-summary-content">
+          <div class="profile-summary-heading">
+            <h1>Profile Summary</h1>
+          </div>
+          <div class="profile-summary">
+            <p>{{ profile_summary.summary }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- delete btn -->
+      <div class="delete-btn-container">
+        <button>
+          <img src="{% static 'images/block-icon.png' %}" alt="" />
+          <a style="text-decoration:none;" href="{% url 'delete_user' pk=register.id %}"><p>Delete User</p></a>
+        </button>
+      </div>
+    </div>
+  </div>
+{% endblock %}

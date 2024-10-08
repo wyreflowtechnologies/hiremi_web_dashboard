@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container3 %}
+
+<!-- view query -->
+<div class="view-query-content">
+    <div class="view-query-container">
+        <p id="current-page" class="view-query-current-page">Dashboard > Queries > Rejected</p>
+
+        <div class="view-query-heading">
+            <h1>Query ID: {{query_data.id}}</h1>
+            <div class="reject-resolve-btn-box">
+                <button id="reject">Reject Query</button>
+                <button id="resolve">Resolve Now</button>
+            </div>
+        </div>
+
+        <div class="view-query-details">
+            {% comment %} {% for i in query_data %} {% endcomment %}
+            <div class="view-details">
+                <p>Father’s Full Name</p>
+                <h3>Mr. {{query_data.name}}</h3>
+            </div>
+            <div class="view-details">
+                <p>Email Address</p>
+                <h3>{{query_data.email}}</h3>
+            </div>
+            <div class="view-details">
+                <p>Status</p>
+                <h3>{{query_data.status}}</h3>
+            </div>
+            <div class="view-details">
+                <p>Creation Date</p>
+                <h3>{{query_data.created_at}}</h3>
+            </div>
+        </div>
+
+        <div class="issue-description-container">
+            <div class="issue">
+                <p>Issue</p>
+                <h3>{{query_data.issue}}</h3>
+            </div>
+            <div class="description">
+                <p>Description</p>
+                <h3>{{query_data.description}}</h3>
+            </div>
+        </div>
+        {% comment %} {% endfor %} {% endcomment %}
+
+
+    </div>
+</div>
+
+{% endblock %}

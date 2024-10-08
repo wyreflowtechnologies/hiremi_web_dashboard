@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block container4 %}
+<div class="not-verified-user-content" data-page="not verified users">
+
+    <div class="not-verified-user-input-container">
+        <h1>Search in Not Verified Users</h1>
+        <div class="input-container">
+            <span>
+                <img src="{% static 'images/frame_inspect.png' %}" alt="">
+                <input type="text" id="user-search" placeholder="Search" value="{{ search_query|default:'' }}">
+            </span>
+            <button id="Search-btn">Search<i class='bx bx-right-arrow-alt'></i></button>
+        </div>
+    </div>
+    
+    <script>
+        function performSearch() {
+            const searchInput = document.getElementById('user-search');
+            const query = searchInput.value.trim();
+            const urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('search', query);
+    
+            searchInput.value = ''; // Clear the search bar content
+            window.location.search = urlParams.toString(); // Perform the search by updating the URL with the search query
+        }
+    
+        document.getElementById('Search-btn').addEventListener('click', function () {
+            performSearch();
+        });
+    
+        document.getElementById('user-search').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    </script>
+
+    <div class="not-verified-user-container">
+        <div class="not-verified-user-heading">
+            <h1>Not Verified Users</h1>
+            <p>Table Representation</p>
+        </div>
+
+        <div class="sorting-btns">
+            <a style="text-decoration:none;" href="?sort_by=full_name&search={{ search_query }}"><button style="cursor:pointer;"><img src="{% static 'images/swap_vert.png' %}" alt="">Name</button></a>
+            <a style="text-decoration:none;" href="?sort_by=passing_year&search={{ search_query }}"><button style="cursor:pointer;"><img src="{% static 'images/swap_vert.png' %}" alt="">Passing Year</button></a>
+           <button><img src="{% static 'images/swap_vert.png' %}" alt="">Sort</button>
+        </div>
+
+        {% if no_data_found %}
+            <p>No data found related to this search query.</p>
+        {% else %}
+            <div class="not-verified-user-list">
+                <div class="user-list-table">
+                    <div class="user-list-item-heading">
+                        <p>S.No</p>
+                        <p>Name</p>
+                        <p>Email</p>
+                        <p>Phone No.</p>
+                        <p>Gender</p>
+                        <p>Degree</p>
+                        <p>Birth State</p>
+                        <p>College Name</p>
+                        <p>Passing Year</p>
+                        <p>Account Creation Date</p>
+                        <div class="status-action-btn">
+                            <p>Status</p>
+                            <p>Action</p>
+                        </div>
+                    </div>
+
+                    {% for i in page_obj %}
+                    <div class="user-list-item">
+                        <p>{{ forloop.counter }}</p>
+                        <p>{{ i.full_name }}</p>
+                        <p>{{ i.email }}</p>
+                        <p>{{ i.phone_number }}</p>
+                        <p>{{ i.gender }}</p>
+                        <p>{{ i.degree_name }}</p>
+                        <p>{{ i.birth_place }}</p>
+                        <p>{{ i.college_name }}</p>
+                        <p>{{ i.passing_year }}</p>
+                        <p>{{ i.time_end }}</p>
+                        <div class="status-action-btn">
+                            {% if not i.verified %}
+                            <button id="select-user">Not Verified</button>
+                            {% endif %}
+                            <a href="{% url "view_user" pk=i.id %}" style="text-decoration:none;" id="view-user"><i class="fa-regular fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Pagination section -->
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1&search={{ search_query }}">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}&search={{ search_query }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}&search={{ search_query }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}&search={{ search_query }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="goto-top-btn">
+        <a href="#dashboard-page" onclick="scrollTotop()">
+            <img src="{% static "images/goto-top-btn.png" %}" alt="">
+            <p>Go to Top</p>
+        </a>
+    </div>
+
+</div>
+{% endblock container4 %}

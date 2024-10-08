@@ -1,0 +1,716 @@
+/* internship , fresher, experienced form page */
+.internship-form-content {
+    width: 100%;
+}
+
+.internship-form-content form {
+    display: flex;
+    justify-content: center;
+}
+
+.internship-form-container {
+    width: 96%;
+    margin-top: 25px;
+}
+
+.internship-form-container .internship-form-heading {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 0px;
+}
+
+.internship-form-container .internship-form-heading h1 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.internship-details-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2%;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.internship-datails-box {
+    width: 65%;
+    margin: 20px 0px 0px 30px;
+}
+
+.internship-datails-box h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.internship-details {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.internship-about-company {
+    margin: 5px 0px 5px 20px;
+}
+
+.internship-about-company p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.internship-about-company input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.internship-details label {
+    margin: 5px 0px 5px 20px;
+}
+
+.internship-details label p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.internship-details label .intern-profile {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+
+.internship-details .intership-type {
+    margin: 10px 0px 0px 20px;
+}
+
+.internship-details .intership-type p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.internship-details .intership-type div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.internship-details .intership-type div label {
+    font-size: 0.95rem;
+    color: #575E6A;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+
+.internship-details .location-detail {
+    margin: 10px 0px 25px 20px;
+}
+
+.internship-details .location-detail p {
+    font-size: 0.9rem;
+    color: #575E6A;
+}
+
+.internship-details .location-detail input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background-color: #F5F5F5;
+    margin-top: 5px;
+}
+
+
+
+.stipend-detail-box {
+    width: 65%;
+    margin: 20px 0px 0px 30px;
+}
+
+.stipend-detail-box h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.stipend-details {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.stipend-details .stipend-type {
+    margin: 20px 0px 10px 20px;
+}
+
+.stipend-details .stipend-type p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.stipend-details .stipend-type div {
+    display: flex;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.stipend-details .stipend-type div label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.95rem;
+    color: #575E6A;
+    cursor: pointer;
+}
+
+.amount-details {
+    width: 90%;
+    margin: 10px 0px 0px 20px;
+}
+
+.amount-details p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.amount-details .amount-input-box {
+    width: 100%;
+    font-size: 0.9rem;
+    color: #575E6A;
+    display: flex;
+    align-items: center;
+    gap: 2.5%;
+    margin-top: 5px;
+}
+
+.amount-details .amount-input-box input:nth-child(1) {
+    width: 10%;
+}
+
+.amount-details .amount-input-box input:nth-child(3) {
+    width: 20%;
+}
+
+.amount-details .amount-input-box input {
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+
+.perks-select {
+    margin: 15px 0px 20px 20px;
+}
+
+.perks-select p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+
+.perks-select .perk-check-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.perks-select .perk-check-box label {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    color: #575E6A;
+    gap: 5px;
+    cursor: pointer;
+}
+
+
+/*  */
+.additional-details {
+    width: 65%;
+    margin: 20px 0px 10px 30px;
+}
+
+.additional-details h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.additional-detail-box {
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.additional-detail-box .inters-response {
+    margin: 20px 0px 0px 20px;
+}
+
+.additional-detail-box .inters-response p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.additional-detail-box .inters-response input {
+    font-size: 0.95rem;
+    width: 90%;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.additional-detail-box .mobile-number {
+    margin: 10px 0px 0px 20px;
+}
+
+.additional-detail-box .mobile-number p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.additional-detail-box .mobile-number label {
+    width: 95%;
+    display: flex;
+    gap: 2.5%;
+    margin-top: 5px;
+}
+
+.additional-detail-box .mobile-number label input {
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.additional-detail-box .mobile-number label input:nth-child(1) {
+    width: 5%;
+}
+
+.additional-detail-box .mobile-number label input:nth-child(2) {
+    width: 85%;
+}
+
+.additional-detail-box .skills-required {
+    margin: 10px 0px 20px 20px;
+}
+
+.additional-detail-box .skills-required p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.additional-detail-box .skills-required input {
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    width: 90%;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 5px;
+    background-color: #F5F5F5;
+}
+
+.post-form-btn {
+    width: 100%;
+    margin: 25px 0px 30px 0px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.post-form-btn button {
+    font-size: 1rem;
+    padding: 14px 15px;
+    font-weight: 600;
+    background-color: #C1272D;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.post-form-btn button:active {
+    background-color: #c1272ccf;
+}
+
+/* 2nd form */
+.internship-datails-box .fresher-job-details {
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.company-name {
+    margin: 20px 0px 5px 20px;
+}
+
+.company-name p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.company-name input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    border-radius: 3px;
+    margin-top: 5px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+}
+
+.about-comapany {
+    margin: 10px 0px 5px 20px;
+}
+
+.about-comapany p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.about-comapany input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+.fresher-job-details label {
+    margin: 10px 0px 5px 20px;
+    cursor: pointer;
+}
+
+.fresher-job-details label p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.fresher-job-details label .fresher-profile {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.job-description {
+    margin: 10px 0px 5px 20px;
+}
+
+.job-description p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.job-description input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+}
+
+
+.education-required {
+    margin: 10px 0px 5px 20px;
+}
+
+.education-required p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.education-required input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    background-color: #F5F5F5;
+}
+
+.fresher-type {
+    margin: 10px 0px 0px 20px;
+}
+
+.fresher-type p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.fresher-type div {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 5px;
+}
+
+.fresher-type div label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #575E6A;
+}
+
+.fresher-job-details .location-detail {
+    margin: 10px 0px 0px 20px;
+}
+
+.fresher-job-details .location-detail p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.fresher-job-details .location-detail input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.fresher-job-details .required-experience {
+    margin: 10px 0px 20px 20px;
+}
+
+.required-experience p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.required-experience div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.required-experience div p {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.required-experience div input {
+    width: 30%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+/* duration & benifit section */
+
+.duration-benifit-detail-box {
+    width: 65%;
+    margin: 20px 0px 0px 30px;
+}
+
+.duration-benifit-detail-box h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.duration-benifit-detail {
+    border: 1px solid #DDDDDD;
+    margin-top: 10px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.duration-box {
+    margin: 20px 0px 5px 20px;
+}
+
+.duration-box p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.duration-box input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.benifit-detail {
+    margin: 20px 0px 20px 20px;
+}
+
+.benifit-detail p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.benifit-detail input {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.ctc-details {
+    margin: 15px 0px 0px 20px;
+}
+
+.ctc-details p {
+    font-size: 0.9rem;
+    color: #575E6A;
+    font-weight: 500;
+}
+
+.ctc-details .ctc-input-box {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+
+.ctc-details .ctc-input-box p {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.ctc-details .ctc-input-box input {
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    background-color: #F5F5F5;
+    border: none;
+    outline: none;
+}
+
+.ctc-details .ctc-input-box input::placeholder {
+    font-size: 0.8rem;
+}
+
+.ctc-details .ctc-input-box input:nth-child(1) {
+    width: 5%;
+}
+
+.ctc-details .ctc-input-box input:nth-child(2) {
+    width: 30%;
+}
+
+.ctc-details .ctc-input-box input:nth-child(4) {
+    width: 30%;
+}
+
+.fresher-perks-select {
+    margin: 10px 0px 20px 20px;
+}
+
+.fresher-perks-select p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #575E6A;
+}
+
+.fresher-perks-select .perk-check-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+    margin-top: 5px;
+}
+
+.fresher-perks-select .perk-check-box label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 0.95rem;
+    color: #575E6A;
+    cursor: pointer;
+}
